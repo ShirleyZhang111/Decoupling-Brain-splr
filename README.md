@@ -1,1 +1,1 @@
-# Decoupling_sparse_lowrank_Brain
+# Decoupling Brain using sparse-plus-rank-k model with bipartite conjugate coupling mechanism
