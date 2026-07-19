@@ -28,7 +28,7 @@ The implementation supports two coupling mechanisms:
 
 ## Requirements
 
-- MATLAB (tested with recent versions; no toolbox requirements are explicitly declared in the code).
+- MATLAB (tested with recent versions).
 - Sufficient RAM for loading `data/*.mat` and fitting ADMM models on your parcellation size.
 
 ## Quick start
