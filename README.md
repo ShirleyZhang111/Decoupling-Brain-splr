@@ -7,8 +7,8 @@ This repository contains MATLAB code accompanying a **complex-valued generative 
 
 The implementation supports two coupling mechanisms:
 
-- **`bipartite`**: bipartite conjugate coupling (phase-sensitive; complex/analytic-signal based)  
-- **`amplitude`**: amplitude-based coupling (real-valued baseline)
+- **`bipartite`**: bipartite conjugate coupling (Hamiltonian-inspired model)  
+- **`amplitude`**: amplitude-based coupling (real-valued baseline, traditional Hopf model)
 
 ## Repository structure
 
