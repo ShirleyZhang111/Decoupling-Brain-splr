@@ -74,7 +74,7 @@ The main fitting call is:
 
 ### Outputs (typical)
 
-Depending on the chosen `rank` and `mechanism`, the main function returns:
+Depending on the chosen rank and mechanism, the main function returns:
 
 - `coeff` — coefficients of the polynomial basis in the local dynamics
 - `sparse` — estimated sparse coupling matrix
