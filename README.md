@@ -110,7 +110,7 @@ Because paths and filenames are dataset-specific, you may need to edit:
 
 ## Citation
 
-If you use this code, please cite the accompanying manuscript (add your BibTeX entry here).
+If you use this code, please cite the accompanying manuscript.
 
 ## License
 
