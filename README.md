@@ -100,7 +100,7 @@ The scripts in `analysis/` are intended to reproduce the main figures/analyses r
 
 Because paths and filenames are dataset-specific, you may need to edit:
 
-- `data_path`, `file_name`, and output directories in each analysis script.
+- `data_path`, - `file_name`, and output directories in each analysis script.
 
 ## Notes on interpretation
 
