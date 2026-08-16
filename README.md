@@ -54,8 +54,8 @@ The repository does **not** distribute the complete raw neuroimaging or third‑
 To reproduce the full results, you will need to obtain the data from the original sources and 
 respect their usage policies.
 
-However, we provide **sample data from individual subjects** at both region and voxel levels to 
-enable users to test and run the pipeline without accessing the full datasets:
+However,we provide **sample data from individual subjects** (one from HCPex, and 
+one from UKB) to enable users to test and run the pipeline without accessing the full datasets.
 
 ### Key configuration options (from the demo)
 
