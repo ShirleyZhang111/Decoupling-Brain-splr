@@ -24,12 +24,12 @@ The implementation supports two coupling mechanisms:
   - ADMM solvers: `hopf_admm_*`
   - graph/cycle utilities: `top_cycles_exactL_sumabs.m`, etc.
   - network metrics: `calc_network_metrics.m`, `calc_node_wise_metrics.m`
-- `data/.mat` — small example matfiles used by the demo and analysis scripts.
+- `data/*.mat` — small example matfiles used by the demo and analysis scripts.
 
 ## Requirements
 
 - MATLAB (tested with recent versions).
-- Sufficient RAM for loading `data/*.mat` and fitting ADMM models on your parcellation size.
+- Sufficient RAM for loading data/*.mat and fitting ADMM models on your parcellation size.
 
 ## Quick start
 
