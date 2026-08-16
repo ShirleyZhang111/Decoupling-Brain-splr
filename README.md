@@ -93,7 +93,7 @@ Depending on the chosen rank and mechanism, the main function returns:
 
 ## Data format
 
-The example datasets in `data/` are MATLAB `.mat` files that include a variable:
+The example datasets in `data/` are MATLAB .mat files that include a variable:
 
 - `TC`: time series matrix of shape **`[N x T]`**, where `N` is number of parcels/regions and `T` is number of time points.
 
