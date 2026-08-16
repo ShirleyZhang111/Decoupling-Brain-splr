@@ -34,11 +34,11 @@ The implementation supports two coupling mechanisms:
 ## Quick start
 
 1. **Clone / download** this repository.
-2. Start MATLAB and `cd` into the repository root.
+2. Start MATLAB and cd into the repository root.
 3. Run the demo:
 
 ```matlab
-demo_sparse_plus_low_rank_model
+demo_sparse_plus_low_rank_model.m
 ```
 
 By default, the demo loads:
