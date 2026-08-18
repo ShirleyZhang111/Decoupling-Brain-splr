@@ -1,5 +1,5 @@
 function [x,Z,res,flag,flag0] = hopf_admm_real_OS(A,B,C,mu,maxit,tol)
-%HOPF_ADMM solves (OS: only-sparse model, which means ran == 1)
+%HOPF_ADMM solves (OS: only-sparse model, which means rank = 0)
 %   min sum_j 0.5*norm(A(:,:,j)*x + Z*B(:,j) - C(:,j))^2 + mu*norm(Z,ell_1)
 %Input:
 %   A: space * polynomial basis * time
