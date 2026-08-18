@@ -11,7 +11,6 @@ function [x,Z,res,flag0] = hopf_admm_imag_OS(A,B,C,mu,maxit,tol)
 %Output:
 %   x: coefficients of polynomial basis
 %   Z: Sparse coupling matrix (Real-valued)
-%   S: Low-rank coupling matrix (Real-valued)
 %   res: residuals
 %by JiangnanZhang @Fudan September 20, 2025
 
