@@ -1,6 +1,6 @@
 function [x,Z,u,v,res,flag0] = hopf_admm_real_k(A,B,C,mu,la,maxit,tol,k)
 %HOPF_ADMM solves
-%   min sum_j 0.5*norm(A(:,:,j)*x + (Y+uv')*B(:,j) - C(:,j))^2 + mu*norm(Z,ell_1) + la*norm(v,2), 
+%   min sum_j 0.5*norm(A(:,:,j)*x + (Y+uv')*B(:,j) - C(:,j))^2 + mu*norm(Z,ell_1) + 0.5*la*norm(v,2)^2, 
 %        s.t. Z = Y
 %Input:
 %   A: space * polynomial basis * time
