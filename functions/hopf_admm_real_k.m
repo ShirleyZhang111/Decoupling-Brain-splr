@@ -35,7 +35,7 @@ u = u ./ vecnorm(u, 2, 1);
 v = randn(n,k);
 
 lambda = zeros(n,n);
-rho = min(max(mu*10,1),1000);
+rho = min(max(mu*10,1),10000);
 tau = 1e-3;
 A = reshape(permute(A,[1,3,2]),[n*t,m]);
 G = A'*A + eye(m).*tau;
@@ -62,9 +62,9 @@ for iter = 1:maxit
 
     % update Y
     W = reshape(A*x,[n,t]);
-    Y = (Y.*tau + Z.*rho - lambda + ...
-        (real(W-C)+u0*v0'*real(B))*real(B)'+...
-        + (imag(W-C)+u0*v0'*imag(B))*imag(B)')/dF;
+    Y = (Y.*tau + Z.*rho - lambda - ...
+        (real(W-C)+u0*v0'*real(B))*real(B)' - ...
+        (imag(W-C)+u0*v0'*imag(B))*imag(B)')/dF;
 
     % update Z
     Z = (Y.*rho + Z.*tau + lambda).*rhotau;
@@ -86,8 +86,7 @@ for iter = 1:maxit
     res(1,iter) = norm(Y-Z,'fro')/sqrtnt;
     res(2,iter) = norm(Z-Z0,'fro')/sqrtnt;
     res(3,iter) = norm(x-x0,2)/sqrtm;
-    % res(4,iter) = max(norm(u-u0,'fro'),norm(v-v0,'fro'))/sqrtnk;
-    res(4,iter) = norm(u*v' - u0*v0', 'fro') / sqrtnt;
+    res(4,iter) = max(norm(u-u0,'fro'),norm(v-v0,'fro'))/sqrtnk;
 
     if max(res(:,iter)) < tol
         flag0 = 0;
@@ -95,24 +94,16 @@ for iter = 1:maxit
     end
 
     % adapt penalty
-    % if res(1,iter) < mean(res(2:4,iter))*0.2
-    %     rho = rho*1.1;
-    %     flag = 1;
-    % elseif res(1,iter) > mean(res(2:4,iter))*5
-    %     rho = rho/1.1;
-    %     flag = 1;
-    % else
-    %     flag = 0;
-    % end
-    if res(1,iter) > 10 * res(2,iter) 
-        rho = rho * 1.618;  
+    if res(1,iter) < max(res(2:4,iter))*0.2
+        rho = rho*1.1;
         flag = 1;
-    elseif res(2,iter) > 10 * res(1,iter)
-        rho = rho / 1.618;
+    elseif res(1,iter) > max(res(2:4,iter))*5
+        rho = rho/1.1;
         flag = 1;
     else
         flag = 0;
     end
 end
 end
+
 
