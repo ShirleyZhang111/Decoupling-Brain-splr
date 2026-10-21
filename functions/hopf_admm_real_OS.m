@@ -46,8 +46,7 @@ for iter = 1:maxit
     
     % update Y
     W = reshape(A*x,[n,t]);
-    Y = (Y.*tau + Z.*rho - lambda + real(W-C)*real(B)' + imag(W-C)*imag(B)')/dF;
-    % Y = (Y.*tau + Z.*rho - lambda + (C-reshape(A*x,[n,t]))*B')/dF;
+    Y = (Y.*tau + Z.*rho - lambda - real(W-C)*real(B)' - imag(W-C)*imag(B)')/dF;
 
     % update Z
     Z = (Y.*rho + Z.*tau + lambda).*rhotau;
@@ -79,4 +78,5 @@ for iter = 1:maxit
 end
 
 end
+
 
