@@ -31,7 +31,9 @@ figure; spy(sparse);
 
 % Calculate the correlation between u-factor and gradient (individual, cerebral cortex)
 load('data\HCP360_gradient.mat')
-u = u.*sign(u(1,:));
+if sum(u < 0) > sum(u > 0)
+    u = -u;
+end
 [r1,p1] = corr(u(1:360),gradient_HCP360);
 
 % Calculate the correlation between u-factor and GSR_R2 (individual)
