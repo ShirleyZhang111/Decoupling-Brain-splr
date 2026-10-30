@@ -49,7 +49,9 @@ mse_real = []; cos_theta = [];
 if strcmp(mechanism, 'bipartite') == 1
     if length(mu)==1 % calculate results with optimal sparsity parameter
         [coefficient, sparse, u, v, res, isconverge] = hopf_admm_imag_k(A(:,:,1:t0),B(:,1:t0),C(:,1:t0),mu,xi,maxit,tol,rank);
-        [~, S0, V0] = svd(B(:,1:t0)'); s = diag(S0); v_hat = (V0'*v).*s;
+        [~, S0, V0] = svd(B(:,1:t0)'); s = diag(S0); 
+        % v_hat = (V0'*v).*s;
+        tolerance = 1e-6; ind = s > tolerance; v_hat = V0(:,ind)*((V0(:,ind)'*v).*s(ind));
 
         if isconverge;n_iter = length(find(res(1,:)>0));else;n_iter = maxit;end
         disp(['Subject ',file_name(1:end-4),' finished, use time ',num2str(n_iter*toc/60),' mins, residual: ' num2str(max(res(:,n_iter)))]);
@@ -81,7 +83,9 @@ if strcmp(mechanism, 'bipartite') == 1
 elseif strcmp(mechanism, 'amplitude') == 1
     if length(mu)==1 % calculate results with optimal sparsity parameter
         [coefficient, sparse, u, v, res, isconverge] = hopf_admm_real_k(A(:,:,1:t0),B(:,1:t0),C(:,1:t0),mu,xi,maxit,tol,rank);
-        [~, S0, V0] = svd(B(:,1:t0)'); s = diag(S0); v_hat = (V0'*v).*s;
+        [~, S0, V0] = svd(B(:,1:t0)'); s = diag(S0); 
+        % v_hat = (V0'*v).*s;
+        tolerance = 1e-6; ind = s > tolerance; v_hat = V0(:,ind)*((V0(:,ind)'*v).*s(ind));
         if isconverge;n_iter = length(find(res(1,:)>0));else;n_iter = maxit;end
         disp(['Subject ',file_name(1:end-4),' finished, use time ',num2str(n_iter*toc/60),' mins, residual: ' num2str(max(res(:,n_iter)))]);
         % Save the result to a file
